@@ -1,0 +1,58 @@
+body {
+  font-family: sans-serif;
+  width: 960px;
+  margin: 0 auto;
+  background-color: #628b8b;
+}
+
+
+#logoimg {
+
+float: left;
+width: auto;
+
+
+}
+
+#logotxt {
+
+  float: left;
+  width: 600px;
+  font-size: 35px;
+  display: inline;
+  font-family: 'Cinzel';
+}
+
+.clear {
+
+clear:both;
+
+}
+
+
+
+h2 {
+
+font-size: 25px;
+text-decoration: bold;
+
+}
+
+ul {
+  list-style: inside disc;
+  padding-left: 25px;
+}
+
+p {
+
+padding: 10px 5px 10px 5px;
+line-height: 19px;
+
+}
+
+
+section > p:nth-child(2n+1) {
+
+  color: red;
+  font-style: italic;
+}

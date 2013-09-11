@@ -1,0 +1,68 @@
+/* This is my comment dawggg*/
+/* This
+  is
+  my
+  multi
+  line
+  comment
+  */
+
+#div1 {
+
+color: #ff0000;
+
+}
+
+#div2 {
+
+
+
+}
+
+
+#div3 {
+
+
+
+}
+
+.divs {
+
+  background: yellow;
+
+}
+
+p {
+
+  color:green;
+
+}
+
+a[href="http://google.com"]{
+  background-color:red;
+}
+/*matches the ending*/
+a[href$="cnn.com"]{
+  background-color:green;
+}
+
+a[href*="yahoo"]{
+  background-color:blue;
+}
+
+
+ul > li:nth-child(3) > span:nth-child(2) {
+  font-size: 25px;
+
+}
+
+a:hover{
+
+background-color: white;
+
+}
+
+a:visited {
+
+
+}
