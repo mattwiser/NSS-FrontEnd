@@ -1,0 +1,68 @@
+body > div {
+	width: 960px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: yellow;
+}
+
+.flt_lft {
+	float: left;
+}
+
+.flt_rt {
+	float: right;
+}
+
+.clear {
+	float: left;
+	clear: both;
+}
+
+img.flt_rt {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+img.flt_lft {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#navbar {
+	width:175px;
+	float: left;
+	background-color: red;
+}
+
+
+#navbar > ul > li {
+	list-style: none;
+	margin-left: -30px;
+}
+
+.content {
+
+	width: 360px;
+	float: left;
+	margin: 0px 10px;
+	background-color:green;
+}
+
+#article_content {
+	float: left;
+	width: 700px;
+	background-color: green;
+}
+
+
+footer {
+	background-color: purple;
+	clear: both;
+	
+}
+
+
+
+
