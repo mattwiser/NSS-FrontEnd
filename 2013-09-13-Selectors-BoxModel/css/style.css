@@ -1,0 +1,41 @@
+body {
+  background: url(../img/);
+}
+
+body > div {
+  width: 960px;
+  margin: auto;
+}
+
+body > div > section:nth-child(1) {
+  width: 600px;
+  border-right: 1px dashed red;
+  float: left;
+}
+
+body > div > section:nth-child(1) > p {
+  float: left;
+  width: 290px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body > div > section:nth-child(2) {
+  width: 358px;
+  float: left;
+}
+
+body > div > section:nth-child(2) > p {
+width: 320px;
+margin-right: 20px;
+margin-left: 20px;
+margin-top: 0px;
+margin-bottom: 0px;
+
+}
+
+.clear {
+  clear: both;
+}
