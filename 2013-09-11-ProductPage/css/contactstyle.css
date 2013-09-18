@@ -1,11 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Gudea:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Mouse+Memoirs);
+
 
 body {
   width: 960px;
   margin: 0 auto;
   background-color: #628b8b;
   font-family: 'Helvetica', sans-serif;
+  
 }
 
 header {
@@ -37,19 +38,15 @@ header {
 
 }
 
-
-
-
 header > h1 {
-  font-family: 'Gudea';
   display: inline-block;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-size: 36px;
   color: orange;
   padding-bottom: 10px;
   padding-left: 20px;
-  padding-top: 20px;
-  font-style: bold;
+ 
 }
 
 #navbar {
@@ -85,93 +82,9 @@ header > h1 {
   color: orange;
 }
 
-
-
-#content_left {
-
-  float: left;
-  width: 290px;
-  margin-top: 20px;
-  margin-right:20px;
-
-
-}
-
-.content_bg {
-  
-  padding: 12px;
-  
-
-}
-
-.content_bg > aside >p {
-    padding :8px;
-    color: #302F25;
-    background-color: #b9dcce;
-
-}
-
-
-#content_right {
-  float: left;
-  width: 650px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  
-}
-
-#content_right1 {
-  clear: right;
-  float: left;
-  width: 650px;
-  margin-bottom: 30px;
-  
-}
-
-
 footer {
-clear: both;
-
-}
-
-
-
-.sale {
-    padding-top: 15px;  
-    float: right;
-    width: 300px;
-    margin-right: 30px;
-}
-
-.sale_img {
-width: 280px;
-float: left;
-margin-left: 15px; 
-}
-
-
-.clear {
   clear: both;
-}
-
-#content_right > .sale > p {
   
-  font-family: 'Mouse Memoirs', sans-serif;  color: #ff2400;
-  text-shadow: 1px 1px 1px #530000;
-  font-size: 48px;
-  display: block;
-  padding-top: 0px;
-  padding-right: 10px;
-}
-
-
-
-#content_right1 > h2 {
-  font-family: 'Mouse Memoirs', sans-serif;  color: #ff2400;
-  text-shadow: 1px 1px 1px #530000;
-  font-size: 48px;
-  padding: 8px;
-  text-align: center;
 }
 
 footer > small {
@@ -180,26 +93,51 @@ footer > small {
   margin: 5px 5px 15px 5px;
 }
 
-.picbox1 {
-  width: 205px;
-  margin-left: 12px;
-  margin-bottom: 12px;
+#main {
+  margin-top: 20px;
+}
+
+img.btn{
+  float: right;
+  clear: right;
+    margin-top: 20px;
+}
+
+.contact {
+  text-align: center;
+  font-size: 36px;
+  line-height: 40px;
+  color: #ff2400;
+  text-shadow: 1px 1px 1px #530000;
+  font-size: 48px;
+  padding: 8px;
+  text-align: center;
+}
+
+.contact_info {
+  display: block;
+  width: 570px;
+  height: 257px;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  
+  
+
+    
 
 }
 
-.picbox2 {
-  width: 205px;
-  margin-bottom: 12px;
+.contact_info > p {
+  
+  padding:10px 5px 50px 5px;
+  background-color: #b9dcce;
+  margin: 10px 15px 10px 15px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 
-.picbox3 {
-  width: 205px;
-  margin-bottom: 12px;
+.clear {
+  clear: left;
 }
-
-
-
-
-
-
-
