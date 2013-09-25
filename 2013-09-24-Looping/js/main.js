@@ -1,39 +1,49 @@
 
 var test_scores =[];
 var deviation = [];
+var sum = 0;
+var mean = 0;
+var square_total = 0;
 
-score = prompt('Please Enter a Score');
 
+/*
 while(test_scores.length<=9)
 {
 	score=parseFloat(score);
 	test_scores.push(score);
 	score = prompt('Please Enter a Score');
 }
+*/
+
+debugger;
 
 
-var sum = 0;
-
-for (var x = 0; x < test_scores.length; x++)
-{
+for (var x = 0; x <10;  x++) {
+	
+	var	score = prompt('Please Enter a Score');
+	score=parseFloat(score);
+	test_scores.push(score);
 	sum += test_scores[x];
-}
 
-var mean = (sum/10);
+	
 
-for (var x = 0; x < test_scores.length; x++)
+};
+
+mean = (sum/10);
+
+for (x = 0; x < 10; x++)
 {
 	deviation.push((test_scores[x]-mean));
 }
 
-for (var x = 0; x < deviation.length; x++)
+for (x = 0; x < 10; x++)
 {
 	deviation[x] = ((deviation[x] * deviation[x]));
 }
 
-var square_total = 0
 
-for (var x = 0; x < deviation.length; x++)
+
+for (x = 0; x < 10; x++)
 {
 		square_total += deviation[x];
 }
