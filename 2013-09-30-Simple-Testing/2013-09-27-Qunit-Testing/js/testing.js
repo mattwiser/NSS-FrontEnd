@@ -41,19 +41,7 @@ test("power", function(){
 });
 
 test("greetings", function(){
-  deepEqual(greeting("hello", "janet"), "hello, janet!", "testing janet")
-})
 
-test("latin", function(){
-  deepEqual(pig_latin("hello"), "ellohay", "testing pig latin")
-})
+  deepEqual(greeting("hello", "janet"), "hello, janet!", "teesting janet")
 
-test("piggy greetings", function(){
-  deepEqual(pig_greeting("hello", "janet"), "ellohay, anetjay!", "testing latin janet")
-})
-
-test("piggy sentence", function(){
-  var sentence = "four score and seven years ago";
-  var expected = "ourfay coresay ndaay evensay earsyay goaay"
-  deepEqual(pig_sentence(sentence), expected, "testing pig sentence")
 })

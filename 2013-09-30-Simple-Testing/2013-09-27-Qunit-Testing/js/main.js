@@ -35,28 +35,3 @@ function greeting(greeting, name)
 {
   return greeting +", "+name+"!"
 }
-
-function pig_latin(string)
-{
-
-  return string.slice(1)+string[0]+"ay"
-}
-
-function pig_greeting(greeting, name)
-{
-  return pig_latin(greeting) + ", " + pig_latin(name) + "!"
-}
-
-function pig_sentence(sentence)
-{
-  var sent_array = sentence.split(" ");
-  var latin_array = [];
-
-  for (var i = 0; i < sent_array.length; i++)
-
-    {
-      latin_array.push(pig_latin(sent_array[i]))
-    };
-
-return latin_array.join(' ');
-}
