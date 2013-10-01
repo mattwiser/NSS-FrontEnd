@@ -6,14 +6,6 @@ var mean = 0;
 var square_total = 0;
 
 
-/*
-while(test_scores.length<=9)
-{
-	score=parseFloat(score);
-	test_scores.push(score);
-	score = prompt('Please Enter a Score');
-}
-*/
 
 debugger;
 
