@@ -23,6 +23,6 @@ function init(){
 };
 
 function pig_prog(){
-  return $('#result').val(reversal_restitch($('#text').val()))
+  return $('#result').val(reversal_restitch($('#text').val()));
 
 }
