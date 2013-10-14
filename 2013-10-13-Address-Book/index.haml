@@ -1,0 +1,76 @@
+!!! 5
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title Address Book
+  %link{rel: "stylesheet", href: "css/normalize.css"}
+  %link{rel: "stylesheet", href: "css/foundation.css"}
+  %link{rel: "stylesheet", href: "css/app.css"}
+  %link{rel: "icon", type:'image/png', href:'./favicon.ico'}
+  %script{src: "js/vendor/custom.modernizr.js"}
+%body
+  .row
+    .large-12.columns
+      %h1 Address Book
+
+  .row
+    .large-3.columns.hide-for-medium-down#input
+      .row
+        .large-12.columns
+          %h6.subheader#input-tag Name
+      .row
+        .large-12.columns
+          %input#name{type:'text'}
+      / Button
+      .row
+        .large-12.columns
+          %h6.subheader#input-tag Address
+      .row
+        .large-12.columns
+          %input#address{type:'text'}
+      / Button
+      .row
+        .large-12.columns
+          %h6.subheader#input-tag Phone Number
+      .row
+        .large-12.columns
+          %input#phone{type:'text'}
+      / Button
+      .row
+        .large-12.columns
+          %h6.subheader#input-tag Country
+      .row
+        .large-12.columns
+          %input#country{type:'text'}
+      / Button
+      .row
+        .large-12.columns
+          %h6.subheader#input-tag Photo
+      .row
+        .large-12.columns
+          %input#photo{type:'text'}
+      .row
+        .large-12.columns
+          %input#submit.button.success.expand{type:'button', value:'Add as Contact!'}
+
+    .large-5.small-6.columns
+      .row
+        .large-12.columns
+          %h3 Contacts
+      .row
+        .large-12.columns
+          #contacts
+            %ul#list
+    .large-4.small-6.columns
+      #map-canvas
+
+  %script{src: 'js/vendor/jquery-1.10.2.js'}
+  %script{src: 'js/vendor/foundation.min.js'}
+  %script{src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCeqg542b94lxW8SSPN3EYWj7-XSEUOg-8&sensor=false'}
+  %script{src: 'js/vendor/underscore.js'}
+  %script{src: 'js/vendor/moment.min.js'}
+  %script{src: 'https://cdn.firebase.com/v0/firebase.js'}
+  %script{src: 'js/app/app.js'}
+

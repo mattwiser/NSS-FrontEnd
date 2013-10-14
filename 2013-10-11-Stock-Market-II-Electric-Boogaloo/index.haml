@@ -1,0 +1,62 @@
+!!! 5
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title Stock Quote
+  %link{rel: "stylesheet", href: "css/normalize.css"}
+  %link{rel: "stylesheet", href: "css/foundation.css"}
+  %link{rel: "stylesheet", href: "css/app.css"}
+  %script{src: "js/vendor/custom.modernizr.js"}
+%body
+
+  .row
+    .small-4.columns#input
+      %h4.subheader Input
+      .row
+        .small-4.columns
+          %input#stockSymbol{type:'text', placeholder:'Symbol'}
+        .small-4.columns
+          %input#stockAmount{type:'text', placeholder:'Amount'}
+        .small-4.columns
+          %input.button.small.expand#stock-btn{type:'button', value:'Buy!'}
+      .row
+        .small-8.columns
+          %input#interval{type:'text', placeholder:'Refresh Interval'}
+        .small-4.columns
+          %input.button.small.expand#interval-btn{type:'button', value:'Set!'}
+      .row
+        .small-8.columns
+          %input#funds{type:'text', placeholder:'Add Funds'}
+        .small-4.columns
+          %input.button.small.expand#funds-btn{type:'button', value:'Add!'}
+      .row
+        .small-12.columns
+          .panel
+            .h6.subheader
+            Current Balance: $
+            %span#totalFunds
+
+
+    .small-8.columns#output
+      %h4.subheader Output
+
+      %table#stock-list
+        %tr
+          %th#name Name
+          %th#symbol Symbol
+          %th#purchasedQuote Purchased Quote
+          %th#currentQuote Current Quote
+          %th#purchased Quantity
+          %th#new-total Old Total
+          %th#old-total New Total
+
+
+
+  %script{src: 'js/vendor/jquery-1.10.2.js'}
+  %script{src: 'js/vendor/foundation.min.js'}
+  %script{src: 'js/vendor/underscore.js'}
+  %script{src: 'js/vendor/moment.min.js'}
+  %script{src: 'https://cdn.firebase.com/v0/firebase.js'}
+  %script{src: 'js/app/app.js'}

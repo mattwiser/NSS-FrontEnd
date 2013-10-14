@@ -1,0 +1,24 @@
+#input {
+  border-right: 1px solid gray;
+  margin-top: 50px; }
+
+#input-tag {
+  line-height: 16px;
+  font-size: 14px; }
+
+#contacts {
+  height: 440px;
+  overflow-y: scroll; }
+
+.contact {
+  display: inline-block;
+  list-style: none;
+  margin: 7px;
+  width: 150px; }
+  .contact p {
+    margin: 0px; }
+
+#map-canvas {
+  margin-top: 50px;
+  width: 100%;
+  height: 440px; }

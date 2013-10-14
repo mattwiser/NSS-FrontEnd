@@ -1,0 +1,6 @@
+#items {
+  width: 100%; }
+
+#result {
+  height: 318px;
+  overflow-y: scroll; }

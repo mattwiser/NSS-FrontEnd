@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <meta content='width=device-width' name='viewport'>
+  <title>Address Book</title>
+  <link href='css/normalize.css' rel='stylesheet'>
+  <link href='css/foundation.css' rel='stylesheet'>
+  <link href='css/app.css' rel='stylesheet'>
+  <link href='./favicon.ico' rel='icon' type='image/png'>
+  <script src='js/vendor/custom.modernizr.js'></script>
+</head>
+<body>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <h1>Address Book</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='large-3 columns hide-for-medium-down' id='input'>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <h6 class='subheader' id='input-tag'>Name</h6>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <input id='name' type='text'>
+        </div>
+      </div>
+      <!-- Button -->
+      <div class='row'>
+        <div class='large-12 columns'>
+          <h6 class='subheader' id='input-tag'>Address</h6>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <input id='address' type='text'>
+        </div>
+      </div>
+      <!-- Button -->
+      <div class='row'>
+        <div class='large-12 columns'>
+          <h6 class='subheader' id='input-tag'>Phone Number</h6>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <input id='phone' type='text'>
+        </div>
+      </div>
+      <!-- Button -->
+      <div class='row'>
+        <div class='large-12 columns'>
+          <h6 class='subheader' id='input-tag'>Country</h6>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <input id='country' type='text'>
+        </div>
+      </div>
+      <!-- Button -->
+      <div class='row'>
+        <div class='large-12 columns'>
+          <h6 class='subheader' id='input-tag'>Photo</h6>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <input id='photo' type='text'>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <input class='button success expand' id='submit' type='button' value='Add as Contact!'>
+        </div>
+      </div>
+    </div>
+    <div class='large-5 small-6 columns'>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <h3>Contacts</h3>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='large-12 columns'>
+          <div id='contacts'>
+            <ul id='list'></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='large-4 small-6 columns'>
+      <div id='map-canvas'></div>
+    </div>
+  </div>
+  <script src='js/vendor/jquery-1.10.2.js'></script>
+  <script src='js/vendor/foundation.min.js'></script>
+  <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCeqg542b94lxW8SSPN3EYWj7-XSEUOg-8&amp;sensor=false'></script>
+  <script src='js/vendor/underscore.js'></script>
+  <script src='js/vendor/moment.min.js'></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script src='js/app/app.js'></script>
+</body>
