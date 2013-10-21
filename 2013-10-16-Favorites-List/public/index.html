@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <meta content='width=device-width' name='viewport'>
+  <title>Master Template</title>
+  <link href='/css/normalize.css' rel='stylesheet'>
+  <link href='/css/foundation.css' rel='stylesheet'>
+  <link href='/css/app.css' rel='stylesheet'>
+  <script src='/js/vendor/custom.modernizr.js'></script>
+  <script src='/js/app/keys.js'></script>
+</head>
+<body>
+  <div id='left'>
+    <div id='map-canvas'></div>
+  </div>
+  <div id='right'>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <input class='button success radius expand large' id='start' type='button' value='Start Tracking!'>
+      </div>
+      <div class='small-12 columns'>
+        <input class='button alert radius expand large' id='stop' type='button' value='Stop Tracking!'>
+      </div>
+    </div>
+    <div class='row'>
+      <div id='fav_cont'>
+        <p id='favs'>Tag Your Favorite Spots!</p>
+        <div class='small-8 columns'>
+          <input id='favorite' type='text'>
+        </div>
+        <div class='small-4 columns'>
+          <input class='button small radius expand' id='favorite-btn' type='button' value='add'>
+        </div>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+  <script src='/js/vendor/jquery-1.10.2.js'></script>
+  <script src='/js/vendor/foundation.min.js'></script>
+  <script src='/js/vendor/underscore.js'></script>
+  <script src='/js/vendor/moment.min.js'></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCeqg542b94lxW8SSPN3EYWj7-XSEUOg-8&amp;sensor=true'></script>
+  <script src='/js/app/app.js'></script>
+</body>

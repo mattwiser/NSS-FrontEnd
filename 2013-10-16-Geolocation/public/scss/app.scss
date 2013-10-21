@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#map-canvas
+{
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#right{
+height: 100%;
+width: 40%;
+float:left;
+background-color:#050C33;
+
+}
+
+#left {
+height: 100%;
+width: 60%;
+float:left;
+}
+
+#start{
+  margin-top: 50px;
+}
+
+#debug{
+  color: white;
+}

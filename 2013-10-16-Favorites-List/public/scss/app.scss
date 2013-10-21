@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#map-canvas
+{
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#right{
+  float: left;
+  height: 100%;
+  width: 30%;
+  padding-top: 50px;
+  padding-left: 50px;
+  background-color:#0A1E4A;
+}
+
+#left{
+  float: left;
+  height: 100%;
+  width: 70%;
+}
+
+#favorite{
+  margin-top: 1px;
+  height: 100
+}
+
+#fav_cont{
+  padding: 5px;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+
+.clear{
+  clear: both;
+}
+#favs{
+  color: white;
+  text-align: center;
+}
