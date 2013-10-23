@@ -38,7 +38,7 @@ test('Paper Trail', function(){
   $('#operator').val('*');
   $('#calculate').trigger('click');
 
-  deepEqual($('#history > li').length, 2, 'should be 1 LIs');
+  deepEqual($('#history > li').length, 1, 'should be 1 LIs');
   deepEqual($('#history > li:first-child > span').length, 6, 'should be 6 spans');
   ok($('#history > li:first-child > span:first-child').hasClass('op1'), 'should have op1 class for first span');
   ok($('#history > li:first-child > span:nth-child(2)').hasClass('operator'), 'should have operator class for first span');

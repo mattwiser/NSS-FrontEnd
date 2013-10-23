@@ -1,0 +1,63 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-clean' ]
+2 info using npm@1.3.11
+3 info using node@v0.11.8-pre
+4 warn package.json nss-automation@0.0.1 No description
+5 warn package.json nss-automation@0.0.1 No README data
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'grunt-contrib-clean', null ]
+8 verbose cache add name=undefined spec="grunt-contrib-clean" args=["grunt-contrib-clean",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'grunt-contrib-clean',
+9 verbose parsed url   path: 'grunt-contrib-clean',
+9 verbose parsed url   href: 'grunt-contrib-clean' }
+10 silly lockFile 862f7e58-grunt-contrib-clean grunt-contrib-clean
+11 verbose lock grunt-contrib-clean /home/matthew/.npm/862f7e58-grunt-contrib-clean.lock
+12 silly lockFile 862f7e58-grunt-contrib-clean grunt-contrib-clean
+13 silly lockFile 862f7e58-grunt-contrib-clean grunt-contrib-clean
+14 verbose addNamed [ 'grunt-contrib-clean', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 8bff91c3-grunt-contrib-clean grunt-contrib-clean@
+17 verbose lock grunt-contrib-clean@ /home/matthew/.npm/8bff91c3-grunt-contrib-clean.lock
+18 silly addNameRange { name: 'grunt-contrib-clean', range: '*', hasData: false }
+19 verbose url raw grunt-contrib-clean
+20 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-clean' ]
+21 verbose url resolved https://registry.npmjs.org/grunt-contrib-clean
+22 info trying registry request attempt 1 at 10:19:00
+23 http GET https://registry.npmjs.org/grunt-contrib-clean
+24 info retry will retry, error on last attempt: Error: getaddrinfo EAI_SYSTEM
+25 info trying registry request attempt 2 at 10:19:30
+26 http GET https://registry.npmjs.org/grunt-contrib-clean
+27 info retry will retry, error on last attempt: Error: getaddrinfo EAI_SYSTEM
+28 info trying registry request attempt 3 at 10:20:50
+29 http GET https://registry.npmjs.org/grunt-contrib-clean
+30 silly lockFile 8bff91c3-grunt-contrib-clean grunt-contrib-clean@
+31 silly lockFile 8bff91c3-grunt-contrib-clean grunt-contrib-clean@
+32 error Error: getaddrinfo EAI_SYSTEM
+32 error     at Object.exports._errnoException (util.js:677:11)
+32 error     at errnoException (dns.js:46:15)
+32 error     at Object.onlookup [as oncomplete] (dns.js:91:26)
+33 error If you need help, you may report this log at:
+33 error     <http://github.com/isaacs/npm/issues>
+33 error or email it to:
+33 error     <npm-@googlegroups.com>
+34 error System Linux 3.8.0-30-generic
+35 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "grunt-contrib-clean"
+36 error cwd /home/matthew/Code/NSS-FrontEnd/2013-10-21-Node
+37 error node -v v0.11.8-pre
+38 error npm -v 1.3.11
+39 error syscall getaddrinfo
+40 error code EAI_SYSTEM
+41 error errno EAI_SYSTEM
+42 verbose exit [ 1, true ]
