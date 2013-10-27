@@ -11,6 +11,7 @@ function setupTest(){
   db.pagination.currentRowCount = 0;
   db.pagination.currentPage = 1;
   Δdb.remove();
+  // $('#cart tbody').empty();
 }
 
 function teardownTest(){
@@ -84,6 +85,101 @@ test('Product Pagination', function(){
   ok(!$('#next').hasClass('hidden'), 'next button should not be hidden');
 });
 
+
+test('Radio Buttons', function(){
+  expect(7);
+
+  $('#customer-image').val('bob.png');
+  $('#customer-name').val('Bob Jenkins');
+  $('#domestic')[0].checked = true;
+  $('#add-customer').trigger('click');
+
+  equal(db.customers.length, 1, 'should have one customer in array');
+  equal(db.customers[0] instanceof Customer, true, 'customer object should be Customer type');
+  equal(db.customers[0].name, 'Bob Jenkins', 'name should be present');
+  equal(db.customers[0].image, 'bob.png', 'image should be present');
+  ok(db.customers[0].id, 'id shoud be present');
+  ok(db.customers[0].isDomestic, 'should be domestic');
+
+  ok(!$('#domestic')[0].checked, 'domestic should not be checked');
+});
+
+test('Customer Dropdown',function(){
+  expect(7);
+
+  for(var i = 0; i < 5; i++){
+    var name = Math.random().toString(36).substring(2);
+    var image = Math.random().toString(36).substring(2) + '.png';
+    var isDomestic = _.shuffle([true, false])[0];
+
+    createTestCustomer(name, image, isDomestic);
+  }
+  createTestCustomer('bob', 'bob.png', true);
+
+// table headers
+// name, count, amount, weight, shipping, total
+
+  equal(db.customers.length, 6, 'there should be 6 customers in the array');
+  equal($('select#select-customer option').length, 6, 'there should be 6 option tags');
+  equal($('select#select-customer option:nth-child(1)').val(), 'bob', 'bob value should on top of the list');
+  equal($('select#select-customer option:nth-child(1)').text(), 'bob', 'bob text should on top of the list');
+  ok($('table#cart').length, 'shopping cart should be visible');
+  ok($('#purchase').length, 'purchase button should be visible');
+  equal($('table#cart th').length, 6, 'there should be 6 columns');
+
+});
+
+
+test('Add Items to Shopping Cart', function(){
+  expect(19);
+
+  createTestProduct('iPad Air', 'ipad-air.png', 1, 500, 10); //Sale price will be 450
+  createTestProduct('iPad Mini', 'ipad-mini.png', 0.8, 400, 0); //sale 200
+  createTestProduct('iPad 2', 'ipad-2.png', 1.4, 400, 10); //sale 360
+
+  createTestCustomer('bob', 'bob.png', true);
+  createTestCustomer('sally', 'sally.png', false);
+
+  $('#select-customer').val('sally');
+  $('#select-customer').trigger('change');
+
+  //2 ipad minis
+  $('#products tr:nth-child(3) .product-image img').trigger('click');
+  $('#products tr:nth-child(3) .product-image img').trigger('click');
+  //1 ipad air
+  $('#products tr:nth-child(2) .product-image img').trigger('click');
+  // 1 ipad 2
+  $('#products tr:nth-child(4) .product-image img').trigger('click');
+
+  equal(db.cart.customer.name, 'sally', 'cart should belong to sally');
+  ok(db.cart.customer instanceof Customer, 'sally should be an instance of Customer');
+  equal(db.cart.products.length, 4, 'There should be 4 Product Objects in db.cart.products array');
+  ok(db.cart.products[0] instanceof Product, 'The items in db.cart.products array should be constructed with Product constructor');
+  equal(db.cart.totals.count, 4, 'The value of db.cart.totals.count (the total number of purchased products) should be 4');
+  equal(db.cart.totals.amount, 1610, 'The value of db.totals.amount (the total cost of products without shipping) should be 1610');
+  equal(db.cart.totals.weight, 4,'The value of db.totals.weight (total weight of items) should be 4');
+//domestic is 50 cents per lb, international is 1.50 per lb
+  equal(db.cart.totals.shipping, 6, 'shipping should be 6 dollars');
+  equal(db.cart.totals.grand, 1616, 'The grand total of db.cart.totals.grand should be 1616');
+
+  equal($('#cart thead tr').length, 1, 'there shold be 1 table header');
+  equal($('#cart tfoot tr').length, 1, 'there should be 1 table footer');
+  equal($('#cart tbody tr').length, 3, 'there should be 3 items in table body');
+
+  equal($('#cart tbody tr:nth-child(1) .product-name').text(),'iPad Mini','name cell text should be ipad Mini');
+  equal($('#cart tbody tr:nth-child(1) .product-count').text(),'2','product cell text should be 2');
+
+
+  equal($('#cart tfoot tr #cart-count').text(),'4', 'cart count should have 4 items');
+  equal($('#cart tfoot tr #cart-amount').text(),'$1610.00', 'cart amount should be 1610 dollars');
+  equal($('#cart tfoot tr #cart-weight').text(),'4', 'cart weight should be 4lbs');
+  equal($('#cart tfoot tr #cart-shipping').text(),'$6.00', 'cart shipping total should be 6 dollars');
+  equal($('#cart tfoot tr #cart-grand').text(),'$1616.00', 'cart grand total should be $1616.00');
+
+
+
+});
+
 function createTestProduct(name, image, weight, price, off){
   $('#product-name').val(name);
   $('#product-image').val(image);
@@ -92,3 +188,17 @@ function createTestProduct(name, image, weight, price, off){
   $('#product-off').val(off);
   $('#add-product').trigger('click');
 }
+
+function createTestCustomer(name, image, isDomestic){
+  $('#customer-name').val(name);
+  $('#customer-image').val(image);
+
+  if (isDomestic){
+    $('#domestic')[0].checked = true;
+  } else {
+    $('#international')[0].checked = true;
+  }
+
+  $('#add-customer').trigger('click');
+}
+

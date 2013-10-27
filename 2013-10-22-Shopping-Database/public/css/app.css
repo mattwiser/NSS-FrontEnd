@@ -1,5 +1,9 @@
 table#products {
   width: 100%; }
 
+table#cart {
+  width: 100%;
+}
+
 .hidden {
   display: none; }

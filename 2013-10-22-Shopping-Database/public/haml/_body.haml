@@ -25,3 +25,38 @@
   .small-12.columns
     #previous.hidden.button.radius.alert.small Prev
     #next.hidden.button.radius.success.small Next
+
+.row
+  .small-6.columns
+    %input#customer-name{type:'text', placeholder:'name'}
+    %input#customer-image{type:'text', placeholder:'image'}
+  .small-6.columns
+    %input#domestic{type:'radio', name:'address', value:'Domestic'} Domestic
+    %input#international{type:'radio', name:'address', value:'International'} International
+    %br
+    %input#add-customer.button.radius.small{type:'button', value:'Add Customer!'}
+
+.row
+  .small-4.columns
+    %select#select-customer
+    %input#purchase{type:'button', value:'Confirm Purchase'}
+  .small-8.columns
+    %table#cart
+      %thead
+        %tr
+          %th Name
+          %th Count
+          %th Amount
+          %th Weight
+          %th Shipping
+          %th Total
+      %tbody
+      %tfoot
+        %tr
+          %td#cart-count Item Count
+          %td#cart-amount Total Item Price
+          %td#cart-weight Total Weight
+          %td#cart-shipping Total Shipping
+          %td#cart-grand Grand Total
+
+
