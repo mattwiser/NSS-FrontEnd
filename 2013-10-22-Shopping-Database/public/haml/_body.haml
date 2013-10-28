@@ -33,21 +33,22 @@
   .small-6.columns
     %input#domestic{type:'radio', name:'address', value:'Domestic'} Domestic
     %input#international{type:'radio', name:'address', value:'International'} International
+    %input#default{type:'radio', name:'address', value:'defualt'}
     %br
     %input#add-customer.button.radius.small{type:'button', value:'Add Customer!'}
 
 .row
   .small-4.columns
     %select#select-customer
-    %input#purchase{type:'button', value:'Confirm Purchase'}
+    %input#purchase.button.expand.small.radius{type:'button', value:'Confirm Purchase'}
   .small-8.columns
     %table#cart
       %thead
         %tr
+          %th Image
           %th Name
+          %th Price
           %th Count
-          %th Amount
-          %th Weight
           %th Shipping
           %th Total
       %tbody
@@ -58,5 +59,17 @@
           %td#cart-weight Total Weight
           %td#cart-shipping Total Shipping
           %td#cart-grand Grand Total
+.row
+  .small-12.columns
+    %table#orders
+      %thead
+        %th#order-time Order Time
+        %th#order-customer Order Customer
+        %th#order-total Order Total
+        %th#order-shipping Order Shipping
+        %th#order-grand Order Grand Total
+        %th#order-products-list Order Products
+      %tbody
+      %tfoot
 
 

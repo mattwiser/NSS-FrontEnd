@@ -54,7 +54,8 @@ function turnHandlersOn(){
   $('#next').on('click', clickNavigation);
   $('#add-customer').on('click', clickAddCustomer);
   $('#select-customer').on('change', selectCustomer);
-  $('#products').on('click', '.product-image img',cartClickItem);
+  $('#products').on('click', '.product-image img', cartClickItem);
+  $('#purchase').on('click', clickPurchase);
 }
 
 function turnHandlersOff(){
@@ -63,12 +64,29 @@ function turnHandlersOff(){
   $('#next').off('click');
   $('#add-customer').off('click');
   $('#select-customer').off('change');
-  $('#products').off('click', '.product-image img',cartClickItem);
+  $('#products').off('click');
+  $('#purchase').off('click');
 }
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
+function clickPurchase(){
+  $('#cart tbody tr').remove();
+  $('#cart-grand').text('');
+  var order = {};
+  order.name = $('#select-customer').val();
+  order.count = db.cart.totals.count;
+  order.amount = db.cart.totals.amount;
+  order.weight = db.cart.totals.weight;
+  order.shipping = db.cart.totals.shipping;
+  order.grand = db.cart.totals.grand;
+
+  Δorders.push(order);
+
+}
+
+
 function cartClickItem(){
   var cells = $(this).parent();
   cells = $(cells).parent();
@@ -138,15 +156,36 @@ function htmlAddtoCart(product){
     $count.addClass('product-count');
     $count.text(1);
 
-    $row.append($image);
-    $row.append($name);
-    $row.append($price);
-    $row.append($count);
+    var $shipping = $('<td>');
+    $shipping.addClass('product-shipping');
 
+    var $total = $('<td>');
+    $total.addClass('product-total');
 
+    if (db.cart.customer.isDomestic===true) {
+      $shipping.text(formatCurrency(product.weight * 0.5));
+      $total.text(formatCurrency(product.price + (product.weight*0.5)));
+      $row.append($image);
+      $row.append($name);
+      $row.append($price);
+      $row.append($count);
+      $row.append($shipping);
+      $row.append($total);
 
-
-    $('#cart tbody').append($row);
+      $('#cart tbody').append($row);
+      return;
+    } else{
+      $shipping.text(formatCurrency(product.weight * 1.5));
+      $total.text(formatCurrency(product.price + (product.weight*1.5)));
+      $row.append($image);
+      $row.append($name);
+      $row.append($price);
+      $row.append($count);
+      $row.append($shipping);
+      $row.append($total);
+      $('#cart tbody').append($row);
+      return;
+    }
   }
 }
 
@@ -258,11 +297,58 @@ function dbCustomerAdded(snapshot){
 
 function dbOrderAdded(snapshot){
   var order = snapshot.val();
+  order = new Order(order);
+  order.id = snapshot.name();
+  order.time = moment().format('MMMM Do YYYY, h:mm:ss a');
+  db.orders.push(order);
+  htmlOrderAdded(order);
 }
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
+function htmlOrderAdded(order){
+
+  var $row = $('<tr>');
+
+  var $amount = $('<td>');
+  $amount.addClass('order-total');
+  $amount.text(formatCurrency(order.amount));
+
+  var $date = $('<td>');
+  $date.addClass('order-time');
+  $date.text(order.time);
+
+  var $customer = $('<td>');
+  $customer.addClass('order-customer');
+  $customer.text(order.name);
+
+  var $shipping = $('<td>');
+  $shipping.addClass('order-shipping');
+  $shipping.text(formatCurrency(order.shipping));
+
+  var $grand = $('<td>');
+  $grand.addClass('order-grand');
+  $grand.text(formatCurrency(order.grand));
+
+  var $items = $('<ul>');
+  $items.addClass('order-products-list');
+
+  for (var i = 0; i < db.cart.products.length; i++) {
+    var $li = $('<li>');
+    $li.text(db.cart.products[i].name);
+    $items.append($li);
+  }
+
+  $row.append($date);
+  $row.append($customer);
+  $row.append($amount);
+  $row.append($shipping);
+  $row.append($grand);
+  $row.append($items);
+  $('#orders tbody').append($row);
+}
+
 
 function htmlAddCustomertoSelect(customer){
   var $option = $('<option>');
@@ -315,6 +401,18 @@ function Customer(name, image, isDomestic){
   this.image = image;
   this.isDomestic = isDomestic;
 }
+
+function Order(order){
+  this.name = order.name;
+  this.count = order.count;
+  this.amount = order.amount;
+  this.weight = order.weight;
+  this.shipping = order.shipping;
+  this.grand = order.grand;
+  this.id = order.id;
+}
+
+
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //

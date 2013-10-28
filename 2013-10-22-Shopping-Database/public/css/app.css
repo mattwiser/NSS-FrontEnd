@@ -1,9 +1,10 @@
 table#products {
   width: 100%; }
 
-table#cart {
-  width: 100%;
-}
-
 .hidden {
   display: none; }
+
+#cart {
+  width: 100%; }
+  #cart tfoot {
+    width: 100%; }

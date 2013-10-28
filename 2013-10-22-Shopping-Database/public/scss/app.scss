@@ -6,3 +6,10 @@ table#products
 .hidden {
   display:none;
 }
+
+#cart {
+  width: 100%;
+  tfoot {
+    width: 100%;
+  }
+}

@@ -60,6 +60,7 @@
     <div class='small-6 columns'>
       <input id='domestic' name='address' type='radio' value='Domestic'>Domestic</input>
       <input id='international' name='address' type='radio' value='International'>International</input>
+      <input id='default' name='address' type='radio' value='defualt'>
       <br>
       <input class='button radius small' id='add-customer' type='button' value='Add Customer!'>
     </div>
@@ -67,16 +68,16 @@
   <div class='row'>
     <div class='small-4 columns'>
       <select id='select-customer'></select>
-      <input id='purchase' type='button' value='Confirm Purchase'>
+      <input class='button expand small radius' id='purchase' type='button' value='Confirm Purchase'>
     </div>
     <div class='small-8 columns'>
       <table id='cart'>
         <thead>
           <tr>
+            <th>Image</th>
             <th>Name</th>
+            <th>Price</th>
             <th>Count</th>
-            <th>Amount</th>
-            <th>Weight</th>
             <th>Shipping</th>
             <th>Total</th>
           </tr>
@@ -91,6 +92,22 @@
             <td id='cart-grand'>Grand Total</td>
           </tr>
         </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='small-12 columns'>
+      <table id='orders'>
+        <thead>
+          <th id='order-time'>Order Time</th>
+          <th id='order-customer'>Order Customer</th>
+          <th id='order-total'>Order Total</th>
+          <th id='order-shipping'>Order Shipping</th>
+          <th id='order-grand'>Order Grand Total</th>
+          <th id='order-products-list'>Order Products</th>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
       </table>
     </div>
   </div>
