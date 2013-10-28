@@ -210,7 +210,7 @@ test('Add Order', function(){
 
   equal($('#cart tbody tr').length, 0, 'should be no rows in tbody after purchase');
   equal($('#cart-grand').text(), '', 'should be no grand total after purchase');
-  // equal($('#select-customer').val(), 'default', 'drop down should default after purchase');
+  equal($('#select-customer').val(), 'default', 'drop down should default after purchase');
   equal(db.orders.length, 1, 'should be 1 order after purchase');
   ok(db.orders[0] instanceof Order, 'should be an Order instance after purchase');
   ok(db.orders[0].id, 'should have an ID after purchase');
