@@ -1,6 +1,7 @@
 extends ../template/layout
 block content
   h1 Color Page
-  - var x = 3;
-  - var y =2;
-  h2= (x*y)
+  a(href='/colors/new') New Color
+  ul
+    - each color in colors
+      li(style='color:#{color};font-size:30px;')=color

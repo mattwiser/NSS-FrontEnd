@@ -29,6 +29,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', home.index);
 app.get('/colors', colors.index);
+app.get('/colors/new', colors.new);
+app.post('/colors', colors.create);
 
 
 http.createServer(app).listen(app.get('port'), function(){
