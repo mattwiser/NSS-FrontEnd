@@ -4,10 +4,14 @@
  */
 
 var express = require('express');
-var home = require('./routes/home');
-var people = require('./routes/people');
+
+var home = require('./routes/home')
+var list = require('./routes/list')
+
+
 var http = require('http');
 var path = require('path');
+
 var app = express();
 
 // all environments
@@ -27,9 +31,10 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', home.index);
-app.get('/people', people.index);
-app.get('/people/new', people.new);
-app.post('/people', people.create);
+app.get('/list', list.index);
+app.get('/list/new', list.new);
+// app.post('/list', list.create);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

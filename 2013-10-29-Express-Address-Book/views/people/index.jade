@@ -2,4 +2,19 @@ extends ../template/layout
 
 block content
   h1=title
-  a(href='/') Home
+  p: a(href='/') Home Page
+  p: a(href='/people/new') New Person
+  h3= people.length + ' People in Address Book'
+
+  -var person = people[0]
+
+  if person
+    table#people
+      thead: tr
+        each value, property in person
+          th=property
+      tbody
+        each person, index in people
+          tr(style="background-color:#{person.color}", id='#{person.name}-#{index}')
+            each value, property in person
+              td(class=property)=value
