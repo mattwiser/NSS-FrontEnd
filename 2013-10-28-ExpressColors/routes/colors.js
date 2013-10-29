@@ -2,9 +2,12 @@
 /*
  * GET home page.
  */
+var fs = require('fs');
+
 
 exports.index = function(req, res){
-  var colors = ['blue', 'green', 'red'];
+  var data = fs.readFileSync('colors.json');
+  var colors = JSON.parse(data);
   res.render('colors/index', {title:'Colors Page', colors: colors});
 };
 
@@ -14,5 +17,10 @@ exports.new = function(req, res){
 
 exports.create = function(req, res){
   var color = req.body.color;
+  var data = fs.readFileSync('colors.json');
+  var colors = JSON.parse(data);
+
+  colors.push(color);
+  fs.writeFileSync('colors.json', JSON.stringify(colors));
   res.redirect('/colors');
 };
