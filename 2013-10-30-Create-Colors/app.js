@@ -1,17 +1,11 @@
-
-/**
- * Module dependencies.
- */
-
+// express application
+var home = require('./routes/home');
+var colors = require('./routes/colors')
+// modules
 var express = require('express');
-
-var home = require('./routes/home')
-var list = require('./routes/list')
-
-
 var http = require('http');
 var path = require('path');
-
+var less = require('express-less');
 var app = express();
 
 // all environments
@@ -24,18 +18,18 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/less', less(__dirname + '/less', { compress: true }));
 
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// route definitions
 app.get('/', home.index);
-app.get('/list', list.index);
-app.get('/list/new', list.new);
-app.post('/list', list.create);
+app.get('/colors', colors.index);
 
-
+// start server
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

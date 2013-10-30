@@ -1,3 +1,12 @@
 extends ../layout/layout
+include ../mixins/form-maker
+
 block content
   h1= title
+  p: a(href="/") Home
+  p: a(href="/list") List Items
+  form(action="/list", method="post")
+    mixin field("name", "Input Name", "Bob")
+    mixin field("date", "Input Due Date", "10/29/2013")
+    mixin field("color", "Input Task Color", "red, #ffcc33, rgb(0 0 225)")
+    button(type="submit") Add Task

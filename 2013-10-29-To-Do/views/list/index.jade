@@ -3,3 +3,18 @@ extends ../layout/layout
 block content
   h1= title
   p Welcome to #{title}
+  p: a(href="/") Home
+  p: a(href="/list/new") New Task
+
+  -var task = tasks[0]
+
+  if task
+    table#to-do
+      thead: tr
+        each value, property in task
+          th=property
+      tbody
+        each task, index in tasks
+          tr(class=task.name)
+            each value, property in task
+              td=value
