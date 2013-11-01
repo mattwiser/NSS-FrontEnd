@@ -1,0 +1,31 @@
+[
+{
+  "title":"Jaws",
+  "image":"http://ia.media-imdb.com/images/M/MV5BOTUwMzY4NzI4Nl5BMl5BanBnXkFtZTcwMDgzNjk3OA@@._V1_SY317_CR12,0,214,317_.jpg",
+  "color":"red",
+  "rated":"R",
+  "studio":"Sony Pictures",
+  "gross":2423525664,
+  "numTheaters":100
+},
+
+{
+  "title":"Lord of The Rings",
+  "image":"http://ia.media-imdb.com/images/M/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX214_.jpg",
+  "color":"green",
+  "rated":"PG-13",
+  "studio":"New Line Cinema",
+  "gross":234234234234234,
+  "numTheaters":990
+},
+
+{
+  "title":"Kill Bill",
+  "image":"http://www.markheadrick.com/dvd/images/KillBill-Volume1.jpg",
+  "color":"Yellow",
+  "rated":"R",
+  "studio":"New Line Cinema",
+  "gross":342345637832,
+  "numTheaters":2000
+}
+]

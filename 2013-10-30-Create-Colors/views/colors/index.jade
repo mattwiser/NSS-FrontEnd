@@ -5,6 +5,7 @@ block content
     .small-12.columns
       h1 Colors Page
   .row
+    - var percent = 100/colors.length
     .small-3.columns
       a.button.small.radius(href="/") Home
     .small-9.columns
@@ -15,4 +16,4 @@ block content
         tbody
           tbody: tr
             each color in colors
-              td.color(style="background-color:#{color};")
+              td.color(style="background-color:#{color}; width:#{percent}%;")
