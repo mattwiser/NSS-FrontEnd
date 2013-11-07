@@ -1,0 +1,6 @@
+form#newGame(action='/games/start', method='post')
+  fieldset
+    legend New Game
+    .row
+      mixin field(9, 'player', 'Player Name')
+      .small-3.columns: button.radius.success.small.expand#submit(type='submit') New Game
