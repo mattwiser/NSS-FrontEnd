@@ -3,6 +3,7 @@ $(document).ready(initialize);
 function initialize(){
   $(document).foundation();
   $('#newGame').on('submit', submitNewGame);
+  $('#cards').on('click', '.card', clickCard);
 }
 
 //---------------------------------------------------------------------------------------------//
@@ -16,21 +17,35 @@ function submitNewGame(event){
   data.numSquares = $('input[name="squares"]').val();
 
   sendGenericAjaxRequest(url, data, 'post', 'post', event, function(data, status, jqXHR){
-    var game=data;
-    htmlCreateCards(game);
+    console.log(data);
+    htmlCreateCards(data);
   });
+
+}
+
+function clickCard(){
+  var position = $(this).data('position');
 
 }
 //---------------------------------------------------------------------------------------------//
 //---------------------------------------------------------------------------------------------//
 //---------------------------------------------------------------------------------------------//
 
-function htmlCreateCards(game){
-  for (var i = 0; i < game.cardArray.length; i++) {
+function htmlCreateCards(data){
+  for (var i = 0; i < data.array; i++) {
+    var $link= $('<a>');
+
+
     var $card = $('<div>');
     $card.addClass('card');
-    $('#cards').append($card);
+    $card.attr('data-position', i);
+
+    $link.append($card);
+
+    $('#cards').append($link);
   };
+  $('input[name="player"]').val('');
+  $('input[name="squares"]').val('');
 }
 
 //---------------------------------------------------------------------------------------------//

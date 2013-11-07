@@ -23,10 +23,17 @@ exports.index = function(req, res){
 
 exports.create = function(req, res){
   var game = new Game(req.body);
+
   var array1 = _.range(game.numSquares);
   var array2 = _.range(game.numSquares);
   var array = array1.concat(array2);
   array = _.shuffle(array);
-  game.cardArray= array;
-  res.send(game);
-};
+  game.cardArray = array;
+
+  var obj = {};
+  obj.array = game.cardArray.length;
+
+  game.save(function(err, game){
+  res.send(obj);
+  });
+}
