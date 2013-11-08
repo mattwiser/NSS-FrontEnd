@@ -32,8 +32,37 @@ exports.create = function(req, res){
 
   var obj = {};
   obj.array = game.cardArray.length;
+  obj.id = game.id;
 
   game.save(function(err, game){
   res.send(obj);
   });
 }
+
+exports.show = function(req, res){
+  console.log('----show----');
+  Game.findById(req.body.id, function(err, game){
+    var obj = {};
+    obj.value = game.cardArray[req.body.position];
+    obj.position=req.body.position
+    res.send(obj);
+  });
+}
+
+exports.show2 = function(req, res){
+  console.log('----show2----');
+  console.log(req.body);
+  Game.findById(req.body.id, function(err, game){
+    var obj = {};
+    obj.value = game.cardArray[req.body.position];
+    obj.position=req.body.position
+    res.send(obj);
+  });
+}
+
+exports.finish = function(req, res){
+  Game.findById(req.body.id, function(err, game){
+    game.time = req.body.time;
+    res.send(game);
+  });
+};
